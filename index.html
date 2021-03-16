@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CONVERTER
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <style>
+                body{
+                    margin-top:50px;
+                    background:#333;
+                    
+
+                }
+            </style>
+    </head>
+    <body>
+       <div class="container">
+           <center>
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="display-4 text-center mb-3">WEIGHT CONVERTER</h1>
+                    <form>
+                        <div class="form-group">
+                            <input id="txt-Pounds" type="number" class="form-control form-control-lg" placeholder="Enter Pounds" >
+                        </div>
+                    </form>
+                    <div id="output">
+                        <div class="card card-primary mb-2">
+                            <div class="card-block">
+                            <h4>Grams:</h4>    
+                            <div id="gramsOutput"></div>
+                            </div>
+                         </div>
+
+                         <div class="card card-danger mb-2">
+                            <div class="card-block">
+                            <h4>Kilograms:</h4>    
+                            <div id="KiloGramsOutput"></div>
+                            </div>
+                         </div>
+
+                         <div class="card card-success mb-2">
+                            <div class="card-block">
+                            <h4>Ounces:</h4>    
+                            <div id="OuncesOutput"></div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+       </div>
+       <script>
+           document.getElementById("output").style.visibility="hidden";
+           document.getElementById("txt-Pounds").addEventListener('input',function(e){
+            document.getElementById("output").style.visibility="visible";
+           let lbs=e.target.value;
+           console.log(lbs);
+           document.getElementById("gramsOutput").innerHTML=lbs/0.0022046;
+           document.getElementById("KiloGramsOutput").innerHTML=lbs/2.2046;
+           document.getElementById("OuncesOutput").innerHTML=lbs*16;
+           });
+       </script>
+
+       
+    </body>
+</html>
